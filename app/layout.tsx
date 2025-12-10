@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Roboto_Slab, Inter } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/layouts/nav/footer";
+import Nav from "@/components/layouts/nav/desktop_nav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -10,6 +12,17 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const robotoSlab = Roboto_Slab({
+  variable: "--font-roboto-slab",
+  weight: ["100","300","400","500","600","700","800","900"], // tous les poids
+  subsets: ["latin"],
+});
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400","500","600","700","800"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +38,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${robotoSlab.className} ${inter.className} antialiased`}
       >
+        <Nav />
+
         {children}
+
+        <Footer />
       </body>
     </html>
   );
