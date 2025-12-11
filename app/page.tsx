@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import ListFlow from "./list_flow/page";
 import { User } from "@/types/user";
+import GlobalLandingResource from "@/components/layouts/landing/global";
+import Loading from "./loading";
 
 export default function Home() {
   const [user, setUser] = useState<User | null>(null);
@@ -24,18 +26,22 @@ export default function Home() {
   }, []);
 
   if (loading) {
-    return <div>Chargement...</div>;
+    return <Loading />;
   }
 
   return (
     <>
       {!user && (
-        <div className="text-center py-10 text-lg font-semibold min-h-screen">
-          Je ne suis pas connecté
+        <div className="pt-16">
+          <GlobalLandingResource />
         </div>
       )}
 
-      {user && <ListFlow />}
+      {user && 
+        <div className="pt-16">
+          <ListFlow />
+        </div>
+      }
     </>
   );
 }

@@ -30,6 +30,7 @@ export default function Header() {
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-6">
 
           {/* Barre de recherche */}
+          {user && (
           <form className="flex-1 max-w-md hidden md:block">
             <label htmlFor="search" className="sr-only">Recherche</label>
 
@@ -44,6 +45,7 @@ export default function Header() {
               />
             </div>
           </form>
+          )}
 
           {/* Navigation desktop */}
           <div className="hidden md:flex items-center gap-8">
@@ -64,7 +66,7 @@ export default function Header() {
           {/* Actions utilisateur */}
           <div className="hidden lg:flex items-center gap-4">
             {/* Si l'utilisateur n'est PAS connecté */}
-            {!user && (
+            {/* {!user && ( */}
               <>
                 <Link href="/register">
                   <Button variant="outline">S'inscrire</Button>
@@ -74,7 +76,7 @@ export default function Header() {
                   <Button>Se connecter</Button>
                 </Link>
               </>
-            )}
+            {/* )} */}
 
             {/* Si l'utilisateur est connecté 
             {user && (
@@ -93,7 +95,7 @@ export default function Header() {
                   </div>
                 } 
               />
-            )}*/}
+            )} */}
           </div>
         </div>
       </nav>

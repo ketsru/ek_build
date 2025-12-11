@@ -8,7 +8,7 @@ import MobileNav from "./mobile_nav";
 export default function Nav () {
     return (
         <>
-            <div className="flex justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+            <div className="fixed top-0 left-0 right-0 flex justify-between p-4 border-b bg-white z-50">
                 <Link href="/" className="flex items-center gap-2">
                     <Image
                         src="https://flowbite.com/docs/images/logo.svg"

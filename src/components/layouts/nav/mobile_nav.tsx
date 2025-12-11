@@ -9,7 +9,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { ShoppingBasket, TextAlignJustify } from "lucide-react"
+import { TextAlignJustify } from "lucide-react"
 import Link from "next/link"
 
 export default function MobileNav () {
@@ -24,16 +24,13 @@ export default function MobileNav () {
                 <SheetContent>
                     <SheetHeader>
                         <SheetTitle>Menu</SheetTitle>
-                        <SheetDescription>
-                            Naviguez facilement avec nous.
-                        </SheetDescription>
                         </SheetHeader>
                         <div className="grid flex-1 auto-rows-min gap-6 px-4">
                             <div className="grid gap-3">
-                                <Link href="">Accueil</Link>
+                                <Link href="/about">A propos</Link>
                             </div>
                             <div className="grid gap-3">
-                                <Link href="">A propos</Link>
+                                <Link href="/shop">Boutique</Link>
                             </div>
                             <div className="grid gap-3">
                                 <Link href="/cart" className="hover:text-primary transition">
@@ -42,9 +39,13 @@ export default function MobileNav () {
                             </div>
                         </div>
                         <SheetFooter>
-                            <Button type="submit" variant="outline">S'inscrire maintenant</Button>
+                            <Link href="/login">
+                                <Button type="submit" variant="outline">S'inscrire maintenant</Button>
+                            </Link>
 
-                            <Button type="submit">Se connecter maintenant !</Button>
+                            <Link href="/login">
+                                <Button type="submit">Se connecter maintenant !</Button>
+                            </Link>
                         </SheetFooter>
                 </SheetContent>
             </Sheet>

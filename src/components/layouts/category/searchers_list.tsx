@@ -9,18 +9,31 @@ import { categoriesData } from "@/components/data/categories";
 import { Category } from "@/types/category";
 
 export default function SearchersCategoryList() {
-  const allSubCategories: Category[] = categoriesData.flatMap(cat =>
-    cat.subCategories?.map(sub => sub) ?? []
+  // Récupérer toutes les sous-catégories uniques
+  const allSubCategories: Category[] = Array.from(
+    new Set(categoriesData.flatMap(cat => cat.subCategories ?? []))
   );
 
+  // Diviser en 2 lignes pour desktop, 1 ligne pour mobile
   const mid = Math.ceil(allSubCategories.length / 2);
-  const row1 = allSubCategories.slice(0, mid);
-  const row2 = allSubCategories.slice(mid);
+  const rows =
+    typeof window !== "undefined" && window.innerWidth < 640
+      ? [allSubCategories] // Mobile = 1 ligne
+      : [allSubCategories.slice(0, mid), allSubCategories.slice(mid)];
 
   return (
-    <div className="space-y-6">
-      <AutoScrollRow items={row1} direction="right" />
-      <AutoScrollRow items={row2} direction="left" />
+    <div className="space-y-8 relative">
+      {rows.map((row, i) => (
+        <AutoScrollRow
+          key={i}
+          items={row}
+          direction={i % 2 === 0 ? "right" : "left"} // alterner le sens pour UX dynamique
+        />
+      ))}
+
+      {/* Effets dégradés sur les bords */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-12 bg-linear-to-r from-white/95 to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-linear-to-l from-white/95 to-transparent" />
     </div>
   );
 }
@@ -32,20 +45,19 @@ function AutoScrollRow({
   items: Category[];
   direction: "left" | "right";
 }) {
-
-  // ➤ Capture l'instance du plugin autoplay
+  // Autoplay fluide continu
   const autoplay = React.useRef(
     Autoplay({
-      delay: 2000,
-      stopOnInteraction: false, // on gère nous-mêmes l'arrêt
+      delay: 1000,
+      stopOnInteraction: true,
     })
   );
 
   return (
     <div
-      onMouseEnter={() => autoplay.current.stop()}   // ⛔ stop au survol
-      onMouseLeave={() => autoplay.current.play()}   // ▶️ reprends après
-      className="w-full"
+      onMouseEnter={() => autoplay.current.stop()}
+      onMouseLeave={() => autoplay.current.play()}
+      className="w-full overflow-x-hidden"
     >
       <Carousel
         opts={{
@@ -55,18 +67,20 @@ function AutoScrollRow({
         }}
         plugins={[autoplay.current as any]}
       >
-        <CarouselContent className="-ml-2 flex gap-1">
+        <CarouselContent className="flex gap-3 px-2">
           {items.map((sub) => {
             const Icon = sub.icon;
-
             return (
               <CarouselItem key={sub.id} className="basis-auto">
                 <Link
                   href={`/list_flow/category/${sub.id}`}
-                  className="text-sm border px-3 py-1 rounded-full flex items-center gap-2 whitespace-nowrap bg-white hover:bg-green-50 hover:border-green-500 transition"
+                  className="text-sm px-4 py-2 rounded-full flex items-center gap-2 whitespace-nowrap
+                             bg-white/80 backdrop-blur border shadow-sm
+                             hover:bg-green-50 hover:border-green-500 hover:shadow-lg hover:scale-105
+                             transition-all duration-300 ease-in-out"
                 >
-                  {Icon && <Icon className="text-green-700 w-4 h-4" />}
-                  <span>{sub.name}</span>
+                  {Icon && <Icon className="text-green-700 w-5 h-5 shrink-0" />}
+                  <span className="font-medium">{sub.name}</span>
                 </Link>
               </CarouselItem>
             );

@@ -1,18 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Roboto_Slab, Inter } from "next/font/google";
+import { Roboto_Slab, Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/layouts/nav/footer";
 import Nav from "@/components/layouts/nav/desktop_nav";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const robotoSlab = Roboto_Slab({
   variable: "--font-roboto-slab",
@@ -38,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${robotoSlab.className} ${inter.className} antialiased`}
+        className={`${robotoSlab.className} ${inter.className} bg-[#F9FAFB] antialiased`}
       >
         <Nav />
 
