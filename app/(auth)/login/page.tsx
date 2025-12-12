@@ -16,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { AuthService } from "@/types/fake/auth/authService";
+import Link from "next/link";
 export default function LoginCard() {
   const router = useRouter();
 
@@ -45,7 +46,7 @@ export default function LoginCard() {
   };
 
   return (
-    <div className="min-h-screen my-auto">
+    <div className="min-h-screen my-auto pt-14">
       <Card className="w-full max-w-xl mx-auto mt-10 md:mt-22 shadow-none border-0">
         <CardHeader>
           <CardTitle className="text-lg">Connectez-vous à votre compte</CardTitle>
@@ -53,7 +54,9 @@ export default function LoginCard() {
             Vueillez saisir vos identifiant pour se connecter.
           </CardDescription>
           <CardAction>
-            <Button variant="link" className="text-lg font-bold hover:text-[#fbbf24] ">Inscription</Button>
+            <Link href="/register">
+              <Button variant="link" className="text-lg font-bold hover:text-[#fbbf24] cursor-pointer">Inscription</Button>
+            </Link>
           </CardAction>
         </CardHeader>
 
@@ -76,12 +79,12 @@ export default function LoginCard() {
               <div className="grid gap-2">
                 <div className="flex items-center">
                   <Label htmlFor="password">Mot de passe</Label>
-                  <a
-                    href="#"
+                  <Link
+                    href="/forget-password"
                     className="ml-auto inline-block text-sm underline-offset-4 hover:underline hover:text-[#fbbf24] font-medium"
                   >
                     Mot de passe oublié ?
-                  </a>
+                  </Link>
                 </div>
                 <Input
                   id="password"

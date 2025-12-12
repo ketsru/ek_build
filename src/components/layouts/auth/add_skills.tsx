@@ -34,7 +34,7 @@ export default function AddSkills({ next, back, update }: any) {
         <CardTitle>Vos compétences</CardTitle>
       </CardHeader>
 
-      <CardContent className="flex flex-col gap-3">
+      <CardContent className="grid grid-cols-2 md:grid-cols-3 gap-3">
         {SKILLS.map((skill) => (
           <div
             key={skill}
@@ -58,10 +58,10 @@ export default function AddSkills({ next, back, update }: any) {
       </CardContent>
 
       <CardFooter className="gap-4 grid grid-cols-2">
-        <Button variant="outline" className="w-full" onClick={back}>
+        <Button variant="outline" className="w-full h-11" onClick={back}>
           Retour
         </Button>
-        <Button className="w-full" onClick={finish}>
+        <Button className="w-full h-11" onClick={finish}>
           Continuer
         </Button>
       </CardFooter>

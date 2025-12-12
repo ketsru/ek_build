@@ -4,7 +4,7 @@ export default function Footer() {
   const { brand, sections, social, footerNote } = footerData;
 
   return (
-    <footer className="bg-neutral-primary-soft">
+    <footer className="bg-neutral-200">
       <div className="mx-auto w-full max-w-7xl p-4 py-6 lg:py-8">
         
         <div className="md:flex md:justify-between">
@@ -12,10 +12,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="mb-6 md:mb-0">
             <Link href={brand.logo.href} className="flex items-center mb-4">
-              <img src={brand.logo.src} className="h-7 me-3" alt={brand.logo.alt} />
-              <span className="text-heading text-2xl font-semibold whitespace-nowrap">
-                {brand.name}
-              </span>
+              <img src={brand.logo.src} className="h-22 me-3 rounded-full" alt={brand.logo.alt} />
             </Link>
 
             <p className="mb-4 text-sm">{brand.slogan}</p>
@@ -33,7 +30,7 @@ export default function Footer() {
           </div>
 
           {/* Sections */}
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:gap-10 sm:grid-cols-2">
             {sections.map((section, i) => (
               <div key={i}>
                 <h2 className="mb-6 text-sm font-bold text-heading uppercase">
@@ -55,7 +52,7 @@ export default function Footer() {
 
         </div>
 
-        <hr className="my-2 border-default sm:mx-auto" />
+        <hr className="my-2 border-amber-50 border-default sm:mx-auto" />
 
         {/* Footer Bottom */}
         <div className="sm:flex sm:items-center sm:justify-between">
@@ -89,10 +86,10 @@ import { Facebook, Mail, PhoneIncoming } from "lucide-react";
 
 const footerData = {
   brand: {
-    name: "Flowbite",
+    name: "TechMind",
     slogan: "Avec TechMind Build, l'avenir se construit maintenant !",
     logo: {
-      src: "https://flowbite.com/docs/images/logo.svg",
+      src: "/assets/logo/logo_footer.png",
       alt: "TechMind Logo",
       href: "/",
     },
@@ -125,13 +122,13 @@ const footerData = {
         { label: "Page d'accueil", href: "/" },
       ],
     },
-    {
+    /*{
       title: "Légal",
       links: [
         { label: "Privacy Policy", href: "/privacy" },
         { label: "Terms & Conditions", href: "/terms" },
       ],
-    },
+    },*/
   ],
 
   social: [
@@ -163,7 +160,7 @@ const footerData = {
   ],
 
   footerNote: {
-    year: 2023,
+    year: 2025,
     brand: "TechMind Build",
     href: "/",
   },

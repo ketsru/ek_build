@@ -8,17 +8,15 @@ import MobileNav from "./mobile_nav";
 export default function Nav () {
     return (
         <>
-            <div className="fixed top-0 left-0 right-0 flex justify-between p-4 border-b bg-white z-50">
+            <div className="flex justify-between p-4 border-b bg-white">
                 <Link href="/" className="flex items-center gap-2">
                     <Image
-                        src="https://flowbite.com/docs/images/logo.svg"
-                        alt="Flowbite Logo"
-                        width={32}
-                        height={32}
+                        src="/assets/logo/logo.png"
+                        alt="TechMind Logo"
+                        width={48}
+                        height={48}
+                        className="border border-gray-100 ml-3 md:ml-6 rounded-full w-10 h-10 md:w-12 md:h-12"
                     />
-                    <span className="text-xl font-semibold dark:text-white">
-                        Flowbite
-                    </span>
                 </Link>
                 <div>
                     <div className="md:block hidden">

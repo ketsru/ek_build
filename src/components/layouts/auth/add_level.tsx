@@ -26,12 +26,14 @@ export default function AddLevel({ next, back, update }: any) {
           placeholder="Niveau d'étude (Licence, BTS...)"
           value={level}
           onChange={(e) => setLevel(e.target.value)}
+          className="h-11"
         />
 
         <Input
           placeholder="Établissement"
           value={school}
           onChange={(e) => setSchool(e.target.value)}
+          className="h-11"
         />
       </CardContent>
 

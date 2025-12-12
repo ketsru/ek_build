@@ -27,22 +27,42 @@ export default function PersonalInfo({ next, back, update }: any) {
   };
 
   return (
-    <Card className="w-full max-w-lg border-0 shadow-none">
+    <Card className="w-full max-w-lg border-0 shadow-none pt-10">
       <CardHeader>
         <CardTitle>Informations personnelles</CardTitle>
       </CardHeader>
 
       <CardContent className="flex flex-col gap-4">
 
-        <Input placeholder="Téléphone" value={phone} onChange={(e) => setPhone(e.target.value)} />
+        <Input 
+          placeholder="Téléphone" 
+          value={phone} onChange={(e) => setPhone(e.target.value)} 
+          className="h-11"
+        />
 
-        <Input type="date" value={birthdate} onChange={(e) => setBirthdate(e.target.value)} />
+        <Input 
+          type="date" 
+          value={birthdate} onChange={(e) => setBirthdate(e.target.value)} 
+          className="h-11"  
+        />
 
-        <Input placeholder="Pays" value={country} onChange={(e) => setCountry(e.target.value)} />
+        <Input 
+          placeholder="Pays" 
+          value={country} onChange={(e) => setCountry(e.target.value)} 
+          className="h-11"  
+        />
 
-        <Input placeholder="Région" value={region} onChange={(e) => setRegion(e.target.value)} />
+        <Input 
+          placeholder="Région" 
+          value={region} onChange={(e) => setRegion(e.target.value)} 
+          className="h-11"
+        />
 
-        <Input placeholder="Ville / Village" value={city} onChange={(e) => setCity(e.target.value)} />
+        <Input 
+          placeholder="Quartier" 
+          value={city} onChange={(e) => setCity(e.target.value)} 
+          className="h-11"  
+        />
       </CardContent>
 
       <CardFooter className="gap-4 grid grid-cols-2">

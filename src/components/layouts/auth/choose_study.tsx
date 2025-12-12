@@ -68,10 +68,10 @@ export default function ChooseStudy({ next, back, update }: any) {
 
 
       <CardFooter className="gap-4 grid grid-cols-2">
-        <Button variant="outline" className="w-full" onClick={back}>
+        <Button variant="outline" className="w-full h-11" onClick={back}>
           Retour
         </Button>
-        <Button className="w-full" onClick={handleNext}>
+        <Button className="w-full h-11" onClick={handleNext}>
           Continuer
         </Button>
       </CardFooter>

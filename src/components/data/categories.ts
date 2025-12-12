@@ -20,14 +20,14 @@ export const categoriesData: Category[] = [
      🔶 CONSTRUCTION
   ============================================================ */
   {
-    id: "1",
+    id: "jklkjgkj8798274",
     name: "Construction",
     icon: Columns2,
     subCategories: [
       {
-        id: "2",
+        id: "2jklkjgkj8798274",
         name: "Maisons individuelles",
-        parentId: "1",
+        parentId: "jklkjgkj8798274",
         icon: Home,
         subCategories: [
           { id: "16", name: "Maçonnerie", parentId: "2", icon: Hammer },
@@ -142,7 +142,7 @@ export const categoriesData: Category[] = [
   },
 
   /* ============================================================
-     🔶 SERVICES & MATÉRIEL
+    SERVICES & MATÉRIEL
   ============================================================ */
   {
     id: "12",
@@ -171,7 +171,7 @@ export const categoriesData: Category[] = [
   },
 
   /* ============================================================
-     🔶 ELECTRICITÉ & ÉNERGIE
+    ELECTRICITÉ & ÉNERGIE
   ============================================================ */
   {
     id: "40",
@@ -186,7 +186,7 @@ export const categoriesData: Category[] = [
   },
 
   /* ============================================================
-     🔶 PLOMBERIE & ASSAINISSEMENT
+    PLOMBERIE & ASSAINISSEMENT
   ============================================================ */
   {
     id: "50",
@@ -200,7 +200,7 @@ export const categoriesData: Category[] = [
   },
 
   /* ============================================================
-     🔶 DÉCORATION & FINITIONS
+    DÉCORATION & FINITIONS
   ============================================================ */
   {
     id: "60",
@@ -214,7 +214,7 @@ export const categoriesData: Category[] = [
   },
 
   /* ============================================================
-     🔶 ESPACES VERTS
+    ESPACES VERTS
   ============================================================ */
   {
     id: "70",
@@ -228,7 +228,7 @@ export const categoriesData: Category[] = [
   },
 
   /* ============================================================
-     🔶 SECURITÉ & TECHNOLOGIES
+    SECURITÉ & TECHNOLOGIES
   ============================================================ */
   {
     id: "80",
@@ -242,7 +242,7 @@ export const categoriesData: Category[] = [
   },
 
   /* ============================================================
-     🔶 LOGISTIQUE DE CHANTIER
+    LOGISTIQUE DE CHANTIER
   ============================================================ */
   {
     id: "90",

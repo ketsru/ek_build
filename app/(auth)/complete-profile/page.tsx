@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Progress } from "@/components/ui/progress";
 
 import ChooseRole from "@/components/layouts/auth/choose_role";
 import ChooseStudy from "@/components/layouts/auth/choose_study";
@@ -9,10 +10,12 @@ import AddApprenticeship from "@/components/layouts/auth/add_apprenticeship";
 import AddSkills from "@/components/layouts/auth/add_skills";
 import SearcherDepartment from "@/components/layouts/auth/searchers_department";
 import PersonalInfo from "@/components/layouts/auth/personal_infos";
+import { Axe } from "lucide-react";
 
 export default function CompleteProfilePage() {
   const [step, setStep] = useState(1);
   const [data, setData] = useState<any>({});
+  const [progress, setProgress] = useState(0);
 
   const updateData = (newData: any) => {
     setData((prev: any) => ({ ...prev, ...newData }));
@@ -21,56 +24,74 @@ export default function CompleteProfilePage() {
   const next = () => setStep((s) => s + 1);
   const back = () => setStep((s) => s - 1);
 
+  // TOTAL STEPS
+  const getTotalSteps = () => {
+    if (!data.role) return 5;
+    return data.role === "WORKER" ? 5 : 3;
+  };
+
+  useEffect(() => {
+    const total = getTotalSteps();
+    const percent = (step / total) * 100;
+    setProgress(percent);
+  }, [step, data.role]);
+
   return (
-    <div className="min-h-[600px] flex justify-center items-center px-4">
-      
-      {/* STEP 1 : ROLE */}
-      {step === 1 && (
-        <ChooseRole next={next} update={updateData} />
-      )}
+    <>
+      {/* -------- PROGRESS BAR + ICON -------- */}
+      <div className="pt-10 w-full flex justify-center relative">
+        <div className="relative w-[60%]">
 
+          {/* Barre de progression */}
+          <Progress value={progress} className="w-full" />
 
-      {/* WORKER FLOW */}
+          {/* Icône flottante qui suit la progression */}
+          <div
+            className="absolute -top-7 transition-all duration-500 ease-out"
+            style={{ left: `calc(${progress}% - 14px)` }} // centre l’icône
+          >
+            <Axe className="w-7 h-7 drop-shadow-md text-[#fbbf24]" />
+          </div>
 
-      {/* STEP 2 : CHOOSE STUDY */}
-      {step === 2 && data.role === "WORKER" && (
-        <ChooseStudy next={next} back={back} update={updateData} />
-      )}
+        </div>
+      </div>
+      {/* -------------------------------------- */}
 
-      {/* STEP 3 : STUDY CASE */}
-      {step === 3 && data.role === "WORKER" && data.study === "STUDY" && (
-        <AddLevel next={next} back={back} update={updateData} />
-      )}
+      <div className="mt-16 mb-20 flex justify-center items-center px-4">
 
-      {/* STEP 3 : APPRENTICE CASE */}
-      {step === 3 && data.role === "WORKER" && data.study === "APPRENTICE" && (
-        <AddApprenticeship next={next} back={back} update={updateData} />
-      )}
+        {/* STEP 1 : ROLE */}
+        {step === 1 && <ChooseRole next={next} update={updateData} />}
 
-      {/* STEP 4 : SKILLS (WORKER) */}
-      {step === 4 && data.role === "WORKER" && (
-        <AddSkills next={next} back={back} update={updateData} />
-      )}
+        {/* WORKER FLOW */}
+        {step === 2 && data.role === "WORKER" && (
+          <ChooseStudy next={next} back={back} update={updateData} />
+        )}
 
-      {/* STEP 5 : PERSONAL INFOS (WORKER) */}
-      {step === 5 && data.role === "WORKER" && (
-        <PersonalInfo next={next} back={back} update={updateData} />
-      )}
+        {step === 3 && data.role === "WORKER" && data.study === "STUDY" && (
+          <AddLevel next={next} back={back} update={updateData} />
+        )}
 
+        {step === 3 && data.role === "WORKER" && data.study === "APPRENTICE" && (
+          <AddApprenticeship next={next} back={back} update={updateData} />
+        )}
 
+        {step === 4 && data.role === "WORKER" && (
+          <AddSkills next={next} back={back} update={updateData} />
+        )}
 
+        {step === 5 && data.role === "WORKER" && (
+          <PersonalInfo next={next} back={back} update={updateData} />
+        )}
 
-      {/* SEARCHER FLOW */}
+        {/* SEARCHER FLOW */}
+        {step === 2 && data.role === "SEARCHER" && (
+          <SearcherDepartment next={next} back={back} update={updateData} />
+        )}
 
-      {/* STEP 2 : CHOOSE DEPARTMENT */}
-      {step === 2 && data.role === "SEARCHER" && (
-        <SearcherDepartment next={next} back={back} update={updateData} />
-      )}
-
-      {/* STEP 3 : PERSONAL INFOS (SEARCHER) */}
-      {step === 3 && data.role === "SEARCHER" && (
-        <PersonalInfo next={next} back={back} update={updateData} />
-      )}
-    </div>
+        {step === 3 && data.role === "SEARCHER" && (
+          <PersonalInfo next={next} back={back} update={updateData} />
+        )}
+      </div>
+    </>
   );
 }

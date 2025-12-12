@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ListFlow from "./list_flow/page";
+import ListFlow from "./list-flow/page";
 import { User } from "@/types/user";
 import GlobalLandingResource from "@/components/layouts/landing/global";
 import Loading from "./loading";
@@ -32,13 +32,13 @@ export default function Home() {
   return (
     <>
       {!user && (
-        <div className="pt-16">
+        <div className="">
           <GlobalLandingResource />
         </div>
       )}
 
       {user && 
-        <div className="pt-16">
+        <div className="">
           <ListFlow />
         </div>
       }

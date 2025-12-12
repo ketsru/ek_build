@@ -26,7 +26,7 @@ export default async function WorkerDetails({ params }: WorkerDetailsProps) {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-6 pt-24">
+    <div className="max-w-7xl mx-auto px-6 pt-28">
       <div className="md:flex gap-6 items-start">
         {/* Image du worker */}
         <div className="relative w-72 h-96 rounded-lg overflow-hidden mb-6">

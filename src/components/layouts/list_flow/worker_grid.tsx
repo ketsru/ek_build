@@ -71,7 +71,7 @@ export default function WorkersGrid() {
                   {category.name}
                 </h2>
               </div>
-              <Link href={`/list_flow/see_all/${category.id}`} className="flex items-center gap-1 hover:text-[#fbbf24]">
+              <Link href={`/see_all/${category.id}`} className="flex items-center gap-1 hover:text-[#fbbf24]">
                 <span className="md:text-sm text-xs">Voir plus</span>
                 <CircleChevronRight size={16} />
               </Link>

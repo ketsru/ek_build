@@ -13,6 +13,7 @@ export interface WorkersCardProps {
   title: string;
   description: string;
   image: string;
+  experience?: string;
   category: Category; 
 }
 

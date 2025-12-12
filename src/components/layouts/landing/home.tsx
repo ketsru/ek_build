@@ -16,18 +16,18 @@ export default function LandingHome () {
         {/* TOP SECTION */}
         <div className="md:flex gap-10 items-start">
             {/* LEFT TEXT */}
-            <div className="max-w-3xl">
-            <p className={`${robotoSlab.className} text-sm tracking-wide font-bold mb-3`}>
-                Pour le secteur résidentiel
-            </p>
+            <div className="max-w-4xl">
+                <p className={`${robotoSlab.className} text-sm tracking-wide font-bold mb-3`}>
+                    Pour le secteur résidentiel
+                </p>
 
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight text-black capitalize">
-                Je <br /> construis <br /> Ma maison<br /> de Rêve
-            </h1>
+                <h1 className="text-5xl md:text-7xl font-extrabold leading-tight text-black capitalize">
+                    Je <br /> construis <br /> Ma maison<br /> de Rêve
+                </h1>
             </div>
 
             {/* RIGHT IMAGE */}
-            <div className="relative w-full h-[400px] md:mt-0 mt-8 md:rounded-tl-[200px] rounded-tl-[100px] overflow-hidden">
+            <div className="relative w-full h-[450px] md:mt-0 mt-8 md:rounded-tl-[200px] rounded-tl-[100px] overflow-hidden">
                 <Image
                     src="/assets/batiments/Crestron-Milan-Office-1.jpg"
                     alt="Industrial safety worker"

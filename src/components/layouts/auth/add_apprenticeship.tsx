@@ -23,14 +23,23 @@ export default function AddApprenticeship({ next, back, update }: any) {
       </CardHeader>
 
       <CardContent className="flex flex-col gap-4">
-        <Input placeholder="Entreprise" value={company} onChange={(e) => setCompany(e.target.value)} />
+        <Input 
+          placeholder="Entreprise" 
+          value={company} onChange={(e) => setCompany(e.target.value)}
+          className="h-11"  
+        />
 
-        <Input placeholder="Nom du patron" value={boss} onChange={(e) => setBoss(e.target.value)} />
+        <Input 
+          placeholder="Nom du patron" 
+          value={boss} onChange={(e) => setBoss(e.target.value)} 
+          className="h-11"
+        />
 
         <Input
-          placeholder="Téléphone du patron"
+          placeholder="+228 90 xx xx xx"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
+          className="h-11"
         />
       </CardContent>
 

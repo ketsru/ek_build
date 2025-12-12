@@ -66,7 +66,7 @@ export default function Header() {
           {/* Actions utilisateur */}
           <div className="hidden lg:flex items-center gap-4">
             {/* Si l'utilisateur n'est PAS connecté */}
-            {/* {!user && ( */}
+            {!user && (
               <>
                 <Link href="/register">
                   <Button variant="outline">S'inscrire</Button>
@@ -76,10 +76,10 @@ export default function Header() {
                   <Button>Se connecter</Button>
                 </Link>
               </>
-            {/* )} */}
+            )}
 
-            {/* Si l'utilisateur est connecté 
-            {user && (
+            {/* Si l'utilisateur est connecté */}
+            {/* {user && ( 
               <ProfileSheet
                 user={user}
                 trigger={
