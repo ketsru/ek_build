@@ -155,7 +155,7 @@ export const workersData: Worker[] = [
     { id: "skill-3", workerId: "wrk-201", name: "Découpe et assemblage" },
   ],
   images: [], // ajouter des images si besoin
-  experience: "11 ans dans l’artisanat et les aménagements intérieurs.",
+  experience: "11 ans dans aménagements intérieurs.",
   location: "Lomé, Togo",
   mainCategory: findCategoryByName("Menuiserie")!,
   subCategories: [],
