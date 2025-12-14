@@ -1,14 +1,5 @@
-
 import { Button } from "@/components/ui/button"
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 import { TextAlignJustify } from "lucide-react"
 import Link from "next/link"
 
@@ -27,24 +18,24 @@ export default function MobileNav () {
                         </SheetHeader>
                         <div className="grid flex-1 auto-rows-min gap-6 px-4">
                             <div className="grid gap-3">
-                                <Link href="/about">A propos</Link>
+                                <Link href="/u/about">A propos</Link>
                             </div>
                             <div className="grid gap-3">
-                                <Link href="/shop">Boutique</Link>
+                                <Link href="/u/shop">Boutique</Link>
                             </div>
                             <div className="grid gap-3">
-                                <Link href="/cart" className="hover:text-primary transition">
-                                    <span>Mon Panier</span>
+                                <Link href="/u/cart" className="hover:text-primary transition">
+                                    <span>Ma sélection</span>
                                 </Link>
                             </div>
                         </div>
                         <SheetFooter>
-                            <Link href="/login">
-                                <Button type="submit" variant="outline">S'inscrire maintenant</Button>
+                            <Link href="/u/register">
+                                <Button type="submit" variant="outline" className="w-full h-11">S'inscrire maintenant</Button>
                             </Link>
 
-                            <Link href="/login">
-                                <Button type="submit">Se connecter maintenant !</Button>
+                            <Link href="/u/login">
+                                <Button type="submit" className="w-full h-11">Se connecter maintenant !</Button>
                             </Link>
                         </SheetFooter>
                 </SheetContent>

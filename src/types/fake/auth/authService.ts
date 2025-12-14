@@ -15,6 +15,16 @@ export class AuthService {
     return user;
   }
 
+  //Forget password
+  static forgetPassword(email: string): User | null {
+    const user = fakeUsers.find(u => u.email === email);
+
+    if (!user) return null;
+    if (user.status !== AccountStatus.ACTIVE) return null;
+
+    return user;
+  }
+
   static register(
     firstName: string,
     lastName: string,

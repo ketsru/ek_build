@@ -74,7 +74,7 @@ function AutoScrollRow({
             return (
               <CarouselItem key={sub.id} className="basis-auto">
                 <Link
-                  href={`/category/${sub.id}`}
+                  href={`/u/cat/${sub.id}`}
                   className="text-sm px-4 py-2 rounded-full flex items-center gap-2 whitespace-nowrap
                              bg-white/80 backdrop-blur border shadow-sm
                              hover:bg-green-50 hover:border-green-500 hover:shadow-lg hover:scale-105

@@ -13,7 +13,7 @@ export function WorkersCard({ worker }: WorkersCardProps) {
   const displayImage = worker.image;
 
   return (
-    <Link href={`/list-flow/${worker.id}`} className="block rounded-2xl">
+    <Link href={`/u/prest/${worker.id}`} className="block rounded-2xl">
       <Card className="relative w-full h-[500px] overflow-hidden cursor-pointer group">
         <Image
           src={displayImage}

@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
 import { User } from "@/types/user";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Search, ShoppingBasket } from "lucide-react";
 import { Input } from "@/components/ui/input";
-//import ProfileSheet from "../../../../app/(users)/profile/page";
+import ProfileSheet from "../../../../app/u/profile/page";
 
 export default function Header() {
   const [user, setUser] = useState<User | null>(null);
@@ -49,16 +48,16 @@ export default function Header() {
 
           {/* Navigation desktop */}
           <div className="hidden md:flex items-center gap-8">
-            <Link href="/about" className="hover:text-primary transition">
+            <Link href="/u/about" className="hover:text-primary transition">
               A propos
             </Link>
-            <Link href="/shop" className="hover:text-primary transition">
+            <Link href="/u/shop" className="hover:text-primary transition">
               Boutique
             </Link>
             {user && (
-            <Link href="/cart" className="hover:text-primary transition md:flex gap-2 items-center">
+            <Link href="/u/cart" className="hover:text-primary transition md:flex gap-2 items-center">
               <ShoppingBasket size={16} className="text-green-700" />
-              <span>Sélections</span>
+              <span>Ma sélection</span>
             </Link>
             )}
           </div>
@@ -68,18 +67,18 @@ export default function Header() {
             {/* Si l'utilisateur n'est PAS connecté */}
             {!user && (
               <>
-                <Link href="/register">
+                <Link href="/a/register">
                   <Button variant="outline">S'inscrire</Button>
                 </Link>
 
-                <Link href="/login">
+                <Link href="/a/login">
                   <Button>Se connecter</Button>
                 </Link>
               </>
             )}
 
             {/* Si l'utilisateur est connecté */}
-            {/* {user && ( 
+            {user && ( 
               <ProfileSheet
                 user={user}
                 trigger={
@@ -95,7 +94,7 @@ export default function Header() {
                   </div>
                 } 
               />
-            )} */}
+            )}
           </div>
         </div>
       </nav>

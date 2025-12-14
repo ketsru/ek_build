@@ -2,20 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Heart, MapPin, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { workersData } from "@/components/data/workers_data";
 
-// EXEMPLE : à remplacer par tes workers sélectionnés
-const selectedWorkers = [
-  {
-    id: "jkfbdfmkjbqdkj34980395815",
-    title: "ABLO Kouma Koffi",
-    experience: "10 ans d'expérience",
-    image: "/assets/workers/bouwer-3430239.webp",
-    location: "Lomé, Togo",
-    category: { name: "Construction" }
-  }
-];
 
-function WorkerSelectedCard({ worker }: { worker: typeof selectedWorkers[0] }) {
+function WorkerSelectedCard({ worker }: { worker: typeof workersData[0] }) {
   return (
     <div className="rounded-lg md:p-4 p-2 shadow-sm">
       <div className="flex md:gap-4 gap-2">
@@ -29,7 +19,7 @@ function WorkerSelectedCard({ worker }: { worker: typeof selectedWorkers[0] }) {
 
         {/* Texte */}
         <div className="flex-1">
-          <Link href={`/list_flow/${worker.id}`}
+          <Link href={`/u/prest/${worker.id}`}
             className="md:text-lg text-base font-bold hover:underline"
           >
             {worker.title}
@@ -67,7 +57,7 @@ function SelectionSummary() {
       <h3 className="text-xl font-semibold">Résumé de ma sélection</h3>
 
       <p className="text-gray-600 dark:text-gray-300">
-        Vous avez sélectionné <strong>{selectedWorkers.length}</strong> prestataire(s).
+        Vous avez sélectionné <strong>{workersData.length}</strong> prestataire(s).
       </p>
 
       <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
@@ -90,7 +80,7 @@ export default function WorkerSelectionPage() {
         
         {/* LISTE */}
         <div className="flex-1 space-y-4">
-          {selectedWorkers.map((worker) => (
+          {workersData.map((worker) => (
             <WorkerSelectedCard key={worker.id} worker={worker} />
           ))}
         </div>

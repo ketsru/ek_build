@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { columns } from "./columnDef"
 import { categoriesData as data } from "@/components/data/categories"
+import { CreateCategorySheet } from "./create"
 
 export function CategoriesList () {
   const [sorting, setSorting] = React.useState<SortingState>([])
@@ -53,10 +54,7 @@ export function CategoriesList () {
                     }
                     className="max-w-sm h-11"
                 />
-                <Button className="flex gap-2 h-11 md:mt-0 mt-4">
-                    <PlusCircleIcon />
-                    <span> Ajouter un worker </span>
-                </Button>
+                <CreateCategorySheet />
             </div>
             <div className="overflow-hidden rounded-xl border shadow-md">
                 <Table className="px-8">

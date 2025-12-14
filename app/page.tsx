@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ListFlow from "./list-flow/page";
+import ListFlow from "./u/prest/page";
 import { User } from "@/types/user";
 import GlobalLandingResource from "@/components/layouts/landing/global";
 import Loading from "./loading";
+import Nav from "@/components/layouts/nav/desktop_nav";
+import Footer from "@/components/layouts/nav/footer";
 
 export default function Home() {
   const [user, setUser] = useState<User | null>(null);
@@ -38,9 +40,13 @@ export default function Home() {
       )}
 
       {user && 
+        <>
         <div className="">
+          <Nav />
           <ListFlow />
+          <Footer />
         </div>
+        </>
       }
     </>
   );

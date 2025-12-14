@@ -18,8 +18,8 @@ import { User } from "@/types/user";
 export default function ProfileSheet({ user, trigger }: { user: User; trigger: React.ReactNode }) {
   return (
     <>
-   {/* <Sheet>
-      {/* L’élément cliquable devient le trigger 
+   <Sheet>
+      {/* L’élément cliquable devient le trigger */}
       <SheetTrigger asChild>
         {trigger}
       </SheetTrigger>
@@ -35,17 +35,17 @@ export default function ProfileSheet({ user, trigger }: { user: User; trigger: R
         <div className="grid flex-1 auto-rows-min gap-6 px-4 mt-4">
           <div className="grid gap-3">
             <Label htmlFor="first">Prénom</Label>
-            <Input id="first" defaultValue={user.firstName} />
+            <Input id="first" defaultValue="Komi Gaston" />
           </div>
 
           <div className="grid gap-3">
             <Label htmlFor="last">Nom</Label>
-            <Input id="last" defaultValue={user.lastName} />
+            <Input id="last" defaultValue="ETSRU" />
           </div>
 
           <div className="grid gap-3">
             <Label htmlFor="email">E-mail</Label>
-            <Input id="email" defaultValue={user.email} disabled />
+            <Input id="email" defaultValue="admin@techmind.com" disabled />
           </div>
         </div>
 
@@ -56,8 +56,7 @@ export default function ProfileSheet({ user, trigger }: { user: User; trigger: R
           </SheetClose>
         </SheetFooter>
       </SheetContent>
-    </Sheet>*/}
-    <div>Page</div>
+    </Sheet>
     </>
   );
 }

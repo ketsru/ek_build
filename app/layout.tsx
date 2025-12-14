@@ -31,11 +31,7 @@ export default function RootLayout({
       <body
         className={`${robotoSlab.className} ${inter.className} bg-[#F9FAFB] antialiased`}
       >
-        {/* <Nav /> */}
-
         {children}
-
-        {/* <Footer /> */}
       </body>
     </html>
   );

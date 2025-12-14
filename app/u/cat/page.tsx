@@ -18,7 +18,7 @@ export default function CategoryWorkersPage({ params }: CategoryWorkersPageProps
   );
 
   if (!filteredWorkers.length) {
-    return notFound(); // ou afficher un message "Aucun worker pour cette catégorie"
+    return <div>non trouvé</div> // ou afficher un message "Aucun worker pour cette catégorie"
   }
 
   // On peut récupérer la catégorie depuis le premier worker

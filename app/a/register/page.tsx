@@ -16,6 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { AuthService } from "@/types/fake/auth/authService";
+import Link from "next/link";
 
 export default function LoginCard() {
   const router = useRouter();
@@ -51,11 +52,11 @@ export default function LoginCard() {
     localStorage.setItem("user", JSON.stringify(user));
 
     // Redirection
-    router.push("/complete-profile");
+    router.push("/a/complete-profile");
   };
 
   return (
-    <div className="min-h-screen my-auto">
+    <div className="min-h-screen my-auto md:m-0 m-4">
       <Card className="w-full max-w-xl mx-auto mt-10 md:mt-5 shadow-none border-0">
         <CardHeader>
           <CardTitle className="text-lg">Créer un compte</CardTitle>
@@ -64,9 +65,11 @@ export default function LoginCard() {
           </CardDescription>
 
           <CardAction>
-            <Button variant="link" className="text-lg font-bold hover:text-[#fbbf24]">
-              Connexion
-            </Button>
+            <Link href="/a/login">
+              <Button variant="link" className="text-lg font-bold hover:text-[#fbbf24] cursor-pointer">
+                Connexion
+              </Button>
+            </Link>
           </CardAction>
         </CardHeader>
 

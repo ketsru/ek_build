@@ -4,15 +4,15 @@ export default function Footer() {
   const { brand, sections, social, footerNote } = footerData;
 
   return (
-    <footer className="bg-neutral-200">
+    <footer className="bg-neutral-200 mt-10">
       <div className="mx-auto w-full max-w-7xl p-4 py-6 lg:py-8">
         
-        <div className="md:flex md:justify-between">
+        <div className="md:flex md:justify-between items-center">
 
           {/* Brand */}
           <div className="mb-6 md:mb-0">
             <Link href={brand.logo.href} className="flex items-center mb-4">
-              <img src={brand.logo.src} className="h-22 me-3 rounded-full" alt={brand.logo.alt} />
+              <img src={brand.logo.src} className="h-16 me-3 rounded-full" alt={brand.logo.alt} />
             </Link>
 
             <p className="mb-4 text-sm">{brand.slogan}</p>

@@ -8,8 +8,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     <SidebarProvider>
       <AppSidebar />
       <main className="w-full m-4">
-        <div className="shadow-xs rounded-sm p-4 bg-gray-100">
-            <SidebarTrigger />
+        <div className="shadow rounded-sm p-4 bg-gray-100">
+            <SidebarTrigger className="p-1 border cursor-pointer" />
         </div>
         {children}
       </main>
