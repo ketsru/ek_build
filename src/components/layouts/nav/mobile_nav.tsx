@@ -30,11 +30,11 @@ export default function MobileNav () {
                             </div>
                         </div>
                         <SheetFooter>
-                            <Link href="/u/register">
+                            <Link href="/a/register">
                                 <Button type="submit" variant="outline" className="w-full h-11">S'inscrire maintenant</Button>
                             </Link>
 
-                            <Link href="/u/login">
+                            <Link href="/a/login">
                                 <Button type="submit" className="w-full h-11">Se connecter maintenant !</Button>
                             </Link>
                         </SheetFooter>

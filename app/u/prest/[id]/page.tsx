@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Roboto_Slab } from "next/font/google";
+import { OrderWorkers } from "@/components/layouts/list_flow/order_workers";
 const robotoSlab = Roboto_Slab({
   variable: "--font-roboto-slab",
   weight: ["900"], 
@@ -106,10 +107,7 @@ export default async function WorkerDetails({ params }: WorkerDetailsProps) {
           {/* CTA */}
           <div className="mt-4 flex gap-4 items-center ">
             <Button variant="outline" className="rounded-full">Ajouter à mon panier</Button>
-            <Button className="rounded-full">
-              Contacter {" "}
-              <span className="md:block hidden">prestataire !</span>
-            </Button>
+            <OrderWorkers workerName={worker.title} />
           </div>
         </div>
       </div>

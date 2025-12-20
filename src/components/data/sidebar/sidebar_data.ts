@@ -4,12 +4,8 @@ import {
   LayoutDashboard,
   User2,
   CreditCard,
-  Key,
-  FileText,
   Activity,
   Settings,
-  Folder,
-  Paperclip,
 } from "lucide-react"
 
 export const adminMenu: SidebarSection[] = [
@@ -27,7 +23,7 @@ export const adminMenu: SidebarSection[] = [
 
   {
     id: "management",
-    label: "Gestion des utilisateurs",
+    label: "Utilisateurs",
     items: [
       {
         id: "workers",

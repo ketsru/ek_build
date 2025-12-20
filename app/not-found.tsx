@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -7,12 +8,12 @@ export default function NotFound() {
         Désolé, la page que vous recherchez n'existe pas ou a été déplacée.
       </p>
 
-      <a
+      <Link
         href="/"
         className="px-6 py-3 bg-black text-white rounded-md hover:bg-gray-800 transition"
       >
         Retour à l'accueil
-      </a>
+      </Link>
     </div>
   );
 }

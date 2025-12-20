@@ -1,5 +1,5 @@
-import SearchersCategoryList from "@/components/layouts/category/searchers_list";
 import ListWorkersByCategory from "@/components/layouts/list_flow/list_works_by_category";
+import SearchersCategoryList from "../cat/page";
 
 
 export default function ListFlow () {

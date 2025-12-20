@@ -1,68 +1,33 @@
 "use client"
 
-import { useState } from "react"
 import Link from "next/link"
 import { ChevronDown, ChevronUp, User2 } from "lucide-react"
-
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubItem,
-  useSidebar,
-} from "@/components/ui/sidebar"
-
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible"
-
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
+import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub, SidebarMenuSubItem, useSidebar } from "@/components/ui/sidebar"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { adminMenu } from "@/components/data/sidebar/sidebar_data"
 import { WithTooltip } from "./sidebar/withTooltip"
 import { SidebarItem, SidebarSection } from "@/types/sidebar/items"
 
-// import { useCurrentUser } from "@/lib/hooks/useCurrentUser"
-// import { User } from "@/types/user"
-
 export default function AdminSidebar() {
-  //const [collapsed, setCollapsed] = useState(false)
   const { open } = useSidebar()
   const collapsed = !open
-  // const { user, loading } = useCurrentUser()
 
   return (
     <Sidebar collapsible="icon">
       <SidebarContent>
-
-        {/* ================= MENU ================= */}
         {adminMenu.map((section: SidebarSection) => (
           <SidebarGroup key={section.id}>
 
             {/* SECTION LABEL */}
             {section.label && !collapsed && (
-              <SidebarGroupLabel className="px-2 text-xs">
+              <SidebarGroupLabel className="px-2 text-xs uppercase font-bold">
                 {section.label}
               </SidebarGroupLabel>
             )}
 
             <SidebarGroupContent>
               <SidebarMenu>
-
                 {section.items.map((item: SidebarItem) => (
                   <SidebarMenuItem key={item.id}>
 
@@ -138,7 +103,7 @@ export default function AdminSidebar() {
         ))}
         </SidebarContent>
 
-      {/* ================= FOOTER ================= */}
+      {/*  FOOTER */}
       <SidebarFooter>
         <SidebarGroup>
           <SidebarGroupLabel>

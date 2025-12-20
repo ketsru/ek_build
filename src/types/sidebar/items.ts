@@ -15,8 +15,8 @@ export type SidebarItem = {
   external?: boolean
 
   /** Sécurité / logique */
-  roles?: ("ADMIN" | "USER" | "DEVELOPER")[]
-  permissions?: string[]
+  //roles?: ("ADMIN" | "USER" | "DEVELOPER")[]
+  //permissions?: string[]
 }
 
 
